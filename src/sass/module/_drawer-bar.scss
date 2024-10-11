@@ -1,0 +1,51 @@
+@use "global" as *;
+
+.drawer-bar {
+  width: rem(32);
+  height: rem(80);
+  display: inline-block;
+  top: 0;
+  right: rem(15);
+  z-index: 31;
+
+  @include mq("md") {
+    display: none;
+  }
+
+}
+
+.drawer-bar span {
+  position: absolute;
+  display: block;
+  width: rem(32);
+  height: rem(1);
+  background-color: #ffffff;
+  transition: all 0.3s;
+}
+
+.drawer-bar span:nth-of-type(1) {
+  top: rem(27);
+}
+
+.drawer-bar span:nth-of-type(2) {
+  top: rem(40);
+}
+
+.drawer-bar span:nth-of-type(3) {
+  top: rem(51);
+}
+
+// active
+.drawer-bar.active span:nth-of-type(1) {
+  transform: translate(-4px, 12px) rotate(37deg);
+  width: rem(40);
+}
+
+.drawer-bar.active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.drawer-bar.active span:nth-of-type(3) {
+  transform: translate(-4px, -12px) rotate(-37deg);
+  width: rem(40);
+}

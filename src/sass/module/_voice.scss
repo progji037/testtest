@@ -1,0 +1,200 @@
+@use "global" as *;
+
+.voice {
+  @include mq("md") {
+    position: relative;
+  }
+}
+
+.voice::before {
+  display: none;
+
+  @include mq("md") {
+    content: "";
+    display: block;
+    width: rem(301);
+    height: rem(138);
+    position: absolute;
+    top: rem(-120);
+    left: calc(50% - min(48%, 38.9rem));
+    background-image: url(/assets/images/common/_voice-キンギョハナダイ.png);
+    background-size: cover;
+
+  }
+}
+
+.voice::after {
+  display: none;
+
+  @include mq("md") {
+    content: "";
+    display: block;
+    width: rem(71);
+    height: rem(162);
+    position: absolute;
+    bottom: rem(-72);
+    right: calc(50% - min(48.5%, 33.7rem));
+    background-image: url(/assets/images/common/_voice-イバラタツ.png);
+    background-size: cover;
+  }
+}
+
+
+
+
+
+
+
+
+
+.voice__inner {}
+
+.voice__header {
+  text-align: center;
+}
+
+.voice__cards {
+  margin-top: rem(44);
+
+  @include mq("md") {
+    // display: flex;
+    // justify-content: center;
+    margin-top: rem(30);
+
+  }
+}
+
+.voice-cards {
+  @include mq('md') {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(40);
+  }
+}
+
+.voice-cards__item {
+  padding-top: rem(16);
+  padding-right: rem(16);
+  padding-left: rem(16);
+  padding-bottom: rem(24);
+  box-shadow: 0 0 10px rgba(#000000, 0.25);
+  background-color: #fff;
+
+  @include mq("md") {
+    padding: rem(24);
+  }
+}
+
+.voice-cards__item:not(:first-child) {
+  margin-top: rem(39);
+
+  @include mq("md") {
+    margin-top: 0;
+  }
+}
+
+.voice-card__header {
+  display: flex;
+  gap: rem(13);
+  justify-content: center;
+
+  @include mq("md") {
+    justify-content: space-between;
+    gap: rem(16);
+  }
+}
+
+.voice-card__body {
+  // max-width: rem(149);
+  width: 100%;
+
+  @include mq("md") {
+    // max-width: rem(276);
+    // padding-right: rem(16);
+    margin-top: rem(24);
+  }
+}
+
+.voice-card__meta {
+  @include mq("md") {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.voice-card__meta-age {
+  font-size: rem(12);
+  line-height: calc(18 / 12);
+
+  @include mq("md") {
+    padding-top: rem(16);
+  }
+}
+
+.voice-card__meta-tag {
+  display: inline-block;
+  font-size: rem(12);
+  line-height: calc(22 / 12);
+  padding: rem(3) rem(11);
+  border: solid 1px $green-blue;
+  color: $green-blue;
+
+  @include mq("md") {
+    padding: rem(5) rem(15);
+  }
+}
+
+.voice-card__title {
+  margin-top: rem(4);
+  font-weight: 500;
+  padding-bottom: rem(2);
+  border-bottom: solid 1px $green-blue;
+  line-height: 1.45;
+
+  @include mq("md") {
+    font-size: rem(24);
+    margin-top: rem(9);
+  }
+}
+
+.voice-card__image {
+  margin-top: rem(8);
+  // margin-left: rem(13);
+  max-width: rem(151);
+
+  // width: 100%;
+  @include mq("md") {
+    max-width: rem(180);
+    margin: 0;
+  }
+}
+
+.voice-card__image img {
+  aspect-ratio: 151/117;
+  object-fit: cover;
+
+  @include mq("md") {
+    aspect-ratio: 180/140;
+  }
+}
+
+.voice-card__text {
+  margin-top: rem(16);
+  // padding-top: rem(16);
+  line-height: calc(24 / 16);
+  font-weight: 500;
+
+  @include mq("md") {
+    margin-top: rem(40);
+  }
+}
+
+.voice__link {
+  text-align: center;
+  // padding-right: rem(3);
+  margin-top: rem(40);
+
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}

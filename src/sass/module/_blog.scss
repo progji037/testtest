@@ -1,0 +1,100 @@
+@use "global" as *;
+
+.blog {
+  @include mq("md") {
+    position: relative;
+    padding-top: rem(100);
+  }
+
+}
+
+.blog::after {
+  display: none;
+
+  @include mq("md") {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 100%;
+    aspect-ratio: 1440/500;
+    object-fit: cover;
+    height: rem(500);
+    background-image: url(/assets/images/common/blog-pc-back.jpg);
+    background-size: cover;
+    top: 0;
+    z-index: -1;
+  }
+}
+
+.blog__inner::before {
+  display: none;
+
+  @include mq("md") {
+    content: "";
+    background-image: url(/assets/images/common/_blog-キンギョハナダイ.png);
+    background-size: cover;
+    display: inline-block;
+    position: absolute;
+    top: rem(25);
+    width: rem(437);
+    height: rem(201);
+    left: calc(50% - min(48%, 39rem));
+  }
+}
+
+
+
+
+.blog__header {
+  text-align: center;
+
+  // margin-top: rem(80);
+  @include mq("md") {
+    // margin-top: rem(100);
+  }
+}
+
+.blog__cards {
+  margin-top: rem(24);
+  @include mq('md') {
+    margin-top: rem(80);
+  }
+}
+
+.blog__title {
+  font-weight: normal;
+  font-family: $second-font-family;
+  font-weight: regular;
+  font-size: rem(32);
+  line-height: calc(40 / 32);
+
+  @include mq("md") {
+    font-size: rem(40);
+    line-height: 1;
+    color: #ffffff;
+  }
+}
+
+
+.blog__title::first-letter {
+  color: $font-accent-color;
+
+  @include mq("md") {
+    color: #ffffff;
+  }
+}
+
+.blog__subtitle {
+  @include mq("md") {
+    color: #ffffff;
+  }
+}
+
+.blog__link {
+  margin-top: rem(40);
+  text-align: center;
+
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}

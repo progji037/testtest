@@ -1,0 +1,41 @@
+@use "global" as *;
+
+.header-drawer {
+  // position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: $green-blue;
+  // transform: translateX(100%);
+  top: 0;
+  right: 0;
+  z-index: 30;
+  overflow-y: scroll;
+  transition: all 0.5s;
+  visibility: hidden;
+  opacity: 0;
+  // padding-top: rem(21);
+}
+
+.header-drawer.open {
+  transform: translateZ(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+.header-drawer__head {
+  position: sticky;
+  width: 100%;
+  height: rem(80);
+  background-color: $green-blue;
+  top: 0;
+  left: 0;
+  z-index: 31;
+}
+
+
+.header-drawer__guide {
+  color: $white;
+  margin-top: rem(21);
+  padding-bottom: rem(48);
+
+}

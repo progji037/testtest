@@ -1,0 +1,155 @@
+@use "global" as *;
+
+.blog-low__wrapper {
+    @include mq('md') {
+        display: flex;
+        gap: rem(80);
+    }
+}
+
+
+.blog__low {
+    margin-top: rem(80);
+}
+
+
+.blog-low__right-inner {
+    padding-inline: rem(25);
+
+    @include mq('md') {
+        padding-inline: 0;
+    }
+}
+
+.blog-low__article {
+    margin-top: rem(80);
+
+    @include mq('md') {
+        margin-top: 0;
+    }
+}
+
+.blog-low__article-box {
+    margin-top: rem(24);
+    display: flex;
+    gap: rem(16);
+    padding: rem(16);
+    box-shadow: 2px 2px 10px rgba(#000000, 0.25);
+
+}
+
+.blog-low__article-box img {
+    aspect-ratio: 121/90;
+    object-fit: cover;
+    max-width: rem(121);
+}
+
+
+.blog-low__article-contents time {
+    font-size: rem(12);
+    font-family: $second-font-family;
+}
+
+.blog-low__article-contents p {
+    font-weight: 500;
+}
+
+.blog-low__review {
+    margin-top: rem(80);
+}
+
+.blog-low__review-contents {
+    margin-top: rem(24);
+}
+
+.blog-low__review-contents img {
+    aspect-ratio: 294/218;
+    // max-width: rem(294);
+}
+
+.blog-low__review-contents p {
+    margin-top: rem(16);
+    font-size: rem(12);
+}
+
+.blog-low__review-title {
+    font-size: rem(24);
+    font-weight: 500;
+    margin-top: rem(8);
+}
+
+.blog-low__campaign {
+    margin-top: rem(80);
+}
+
+.blog-low__campaign-card {
+    margin-top: rem(24);
+}
+
+.blog-low__campaign-card--second {
+    margin-top: rem(40);
+}
+
+.blog-low__archive {
+    margin-top: rem(80);
+}
+
+.blog-low__archive-inner {
+    padding-inline: rem(25);
+}
+
+.blog-low__archive-items {
+    margin-top: rem(24);
+    font-size: rem(24);
+    color: $green-blue;
+    padding-left: rem(24);
+    position: relative;
+}
+
+.blog-low__archive-item {
+    display: none;
+}
+
+
+.blog-low__archive-list {
+    padding-left: rem(24);
+    position: relative;
+}
+
+.blog-low__archive-head::before {
+    content: "";
+    position: absolute;
+    clip-path: polygon(0 0, 0 100%, 100% 50%);
+    background-color: $green-blue;
+    display: inline-block;
+    width: rem(16);
+    height: rem(20);
+    top: rem(9);
+    left: 0;
+    transition: all 0.3s;
+}
+
+.blog-low__archive-head.is-open::before {
+    transform: rotate(90deg);
+}
+
+.blog-low__archive-list::before {
+    content: "";
+    position: absolute;
+    clip-path: polygon(0 0, 0 100%, 100% 50%);
+    background-color: $green-blue;
+    display: inline-block;
+    width: rem(16);
+    height: rem(20);
+    top: rem(9);
+    left: 0;
+    // padding-left: rem();
+    transition: all 0.3s;
+}
+
+
+.blog-low__cards-head {}
+
+.blog-low__cards-title {
+    border-bottom: solid 1px $green-blue;
+}

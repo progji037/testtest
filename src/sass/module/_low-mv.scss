@@ -1,0 +1,33 @@
+@use "global" as *;
+
+.low-mv__contents {
+    position: relative;
+}
+
+
+.low-mv__image {}
+
+.low-mv__title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #fff;
+
+    @include mq("md") {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.low-mv__main-title {
+    font-family: $third-font-family;
+    font-size: rem(40);
+    font-weight: normal;
+    @include mq('md') {
+        font-size: rem(80);
+
+    }
+}

@@ -1,0 +1,106 @@
+@use "global" as *;
+
+.site-guide {
+  display: flex;
+  color: $white;
+  // margin-top: rem(38);
+  gap: rem(18);
+  justify-content: center;
+
+  @include mq("md") {
+    flex-wrap: nowrap;
+    gap: rem(122);
+    // margin-top: rem(22);
+    justify-content: left;
+  }
+}
+
+.site-guide__group {
+  @include mq("md") {
+    display: flex;
+    gap: rem(120);
+  }
+}
+
+.site-guide__list--space a {
+  display: flex;
+  flex-direction: column;
+
+  @include mq('md') {
+    flex-direction: row;
+
+  }
+}
+
+.site-guide__group-box {
+  margin-top: rem(40);
+
+  @include mq('md') {
+    margin-top: 0;
+
+  }
+}
+
+.site-guide__group-lists {}
+
+//太字なし上の余白アリ
+.site-guide__group-list {
+  margin-left: rem(18);
+  margin-top: rem(18);
+}
+
+// 太字で上の余白無し
+.site-guide__list--top {
+  padding-left: rem(20);
+  // margin-left: rem(12);
+  margin-left: 0;
+  margin-top: 0;
+  font-weight: 700;
+  position: relative;
+}
+
+// 太字で余白広め
+.site-guide__list--space {
+  padding-left: rem(20);
+  // margin-left: rem(12);
+  margin-left: 0;
+  margin-top: rem(33);
+  position: relative;
+  font-weight: 700;
+}
+
+
+
+.site-guide__list--top::before,
+.site-guide__list--space::before {
+  position: absolute;
+  content: "";
+  display: inline-block;
+  top: rem(3);
+  left: 0;
+  width: rem(18);
+  height: rem(18);
+  background-image: url(/assets/images/common/ヒトデ-sp.png);
+  background-size: cover;
+}
+
+.site-guide__group-list:hover a {
+  opacity: 0.5;
+}
+
+.site-guide__list--space:hover a {
+  opacity: 0.5;
+}
+
+// .site-guide__list-space {
+//   margin-top: rem(18);
+// }
+
+// .site-guide__group-subject {
+//   position: relative;
+//   font-weight: 700;
+// }
+
+// .site-guide__group-subject a {
+//   margin-left: rem(20);
+// }

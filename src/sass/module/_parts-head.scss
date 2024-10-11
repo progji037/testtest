@@ -1,0 +1,44 @@
+@use "global" as *;
+
+.parts-head {
+    position: relative;
+}
+
+.parts-head ::before {
+    content: "";
+    position: absolute;
+    width: rem(8);
+    height: rem(50);
+    background-color: $green-blue;
+    top: 0;
+    left: 0;
+
+}
+
+.parts-head__title {
+    display: flex;
+    align-items: center;
+    gap: rem(8);
+    // position: relative;
+    margin-left: rem(20);
+
+}
+
+.parts-head__title::before {
+    // content: "";
+    // position: absolute;
+    // width: rem(8);
+    // height: rem(50);
+    // background-color: $green-blue;
+    // left: 0;
+}
+
+
+.parts-head__title img {
+    width: rem(50);
+    height: rem(50);
+}
+
+.parts-head__text {
+    font-size: rem(24);
+}

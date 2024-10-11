@@ -1,0 +1,160 @@
+@use "global" as *;
+
+.header {
+  position: fixed;
+  width: 100%;
+  height: rem(80);
+  background-color: rgba($color: #0d2936, $alpha: 0.68);
+  box-shadow: 0px 4px 1px rgba(0, 0, 0, 0.25);
+  z-index: 20;
+  animation: delayFade 3s forwards;
+
+  @include mq("md") {
+    height: rem(90);
+  }
+}
+
+@keyframes delayFade {
+
+  0%,
+  80% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.header__wrapper {
+  height: inherit;
+
+  @include mq("md") {}
+}
+
+.header__inner {
+  height: inherit;
+
+  @include mq("md") {
+    padding-left: rem(40);
+    padding-right: rem(41);
+  }
+}
+
+.header__nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: inherit;
+
+  @include mq("md") {}
+}
+
+.header__logo {
+  // padding-top: rem(21);
+  padding-left: rem(15);
+  width: rem(117);
+  position: relative;
+  z-index: 31;
+
+  @include mq("md") {
+    width: rem(131);
+    padding-left: 0;
+    padding-top: rem(0);
+  }
+}
+
+.header__items {
+  display: none;
+
+  @include mq("md") {
+    height: inherit;
+    display: flex;
+    gap: rem(40);
+    text-align: center;
+    align-items: center;
+    font-size: rem(18);
+    color: #ffffff;
+    // padding-top: rem(22);
+  }
+}
+
+.header__item {
+  font-size: rem(18);
+  font-family: $second-font-family;
+
+  @include mq("md") {
+    position: relative;
+    height: inherit;
+  }
+}
+
+.header__item a {
+  @include mq("md") {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    position: relative;
+    line-height: 1.4;
+  }
+}
+
+.header__item p {
+  line-height: calc(15 / 10);
+}
+
+.header__item::after {
+  @include mq("md") {
+    content: "";
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: rem(15);
+    left: 0;
+    /*線の形状*/
+    width: 100%;
+    height: rem(1);
+    background: #ffffff;
+    /*アニメーションの指定*/
+    transition: all 0.2s;
+    transform: scale(0, 1);
+    /*X方向0、Y方向1*/
+    transform-origin: center top;
+    /*上部中央基点*/
+  }
+}
+
+.header__item:hover::after {
+  @include mq("md") {
+    transform: scale(1, 1);
+    /*X方向にスケール拡大*/
+  }
+}
+
+.header__item p {
+  font-size: rem(10);
+  font-family: $base-font-family;
+}
+
+// .header__item:not(:first-child) {
+//   margin-left: rem(40);
+// }
+
+/* .drawer
+-------------------------------------------------------------*/
+.header__drawer {
+  position: fixed;
+  // width: rem(32);
+  // height: rem(80);
+  // display: inline-block;
+  // top: 0;
+  // right: rem(15);
+  // z-index: 31;
+
+  // margin-top: rem(28);
+  // margin-right: rem(15);
+  // @include mq("md") {
+  //   display: none;
+  // }
+}

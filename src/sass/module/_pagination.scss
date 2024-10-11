@@ -1,0 +1,97 @@
+@use "global" as *;
+
+.pagination {
+    display: flex;
+    justify-content: center;
+
+    @include mq('md') {
+    }
+}
+
+.pagination__left {}
+
+.pagination__lists {
+    display: flex;
+    gap: rem(12);
+}
+
+.pagination__list {
+    display: inline-block;
+    width: rem(38);
+    height: rem(38);
+    // padding: rem(9) rem(14);
+    border: solid 1px $green-blue;
+    color: $green-blue;
+    line-height: 1;
+}
+
+.pagination__list a{
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: rem(9) rem(14);
+    transition: all 0.3s;
+}
+
+.pagination__list:hover a{
+    color: #fff;
+    background-color: $green-blue;
+}
+
+
+.pagination__list--pc {
+    display: none;
+
+    @include mq('md') {
+        display: block;
+    }
+
+}
+
+.pagination__list--left {
+    margin-right: rem(40);
+    position: relative;
+}
+
+
+.pagination__list--left a::before {
+    content: "";
+    position: absolute;
+    width: rem(15);
+    height: rem(15);
+    // margin-left: rem(4);
+    border-bottom: solid 1px $green-blue;
+    border-left: solid 1px $green-blue;
+    transform:rotate(45deg);
+    top: rem(11);
+    left: rem(14);
+}
+
+.pagination__list--left a:hover::before {
+    border-bottom: solid 1px white;
+    border-left: solid 1px white;
+  }
+
+
+.pagination__list--right {
+    margin-left: rem(40);
+    position: relative;
+
+}
+
+.pagination__list--right a::before {
+    content: "";
+    position: absolute;
+    width: rem(15);
+    height: rem(15);
+    border-top: solid 1px $green-blue;
+    border-right: solid 1px $green-blue;
+    transform: rotate(45deg);
+    top: rem(11);
+    right: rem(15);
+}
+
+.pagination__list--right a:hover::before {
+    border-top: solid 1px white;
+    border-right: solid 1px white;
+  }

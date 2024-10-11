@@ -1,0 +1,43 @@
+@use "global" as *;
+
+.tab-links {
+}
+
+.tab-links__lists {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: rem(16);
+    column-gap: rem(21);
+
+    @include mq('md') {
+        display: flex;
+        gap: rem(32);
+    }
+
+
+}
+
+.tab-link__list {
+    text-align: center;
+}
+
+.tab-link__list a {
+    display: inline-block;
+    width: rem(162);
+    color: $green-blue;
+    border: solid 1px $green-blue;
+    padding: rem(5) rem(22);
+    font-size: rem(14);
+    transition: all 0.3s;
+}
+
+
+
+.tab-link__list:hover a{
+    color: #fff;
+    background-color: $green-blue;
+}
+
+.tab-link__list--info{
+    padding: rem(10) rem(16);
+}

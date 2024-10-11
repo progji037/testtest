@@ -1,0 +1,35 @@
+@use "global" as *;
+
+.galley__title {
+    text-align: center;
+
+    @include mq('md') {
+        position: relative;
+    }
+}
+
+.galley__title::before {
+
+    @include mq("md") {
+        content: "";
+        display: block;
+        position: absolute;
+        width: rem(301);
+        height: rem(138);
+        top: rem(-40);
+        right: calc(50% - min(60.5%, 54rem));
+        /* min関数を使用 */
+        background-image: url(/assets/images/common/_contact-pc-キンギョハナダイ.png);
+        background-size: cover;
+    }
+}
+
+
+
+.galley__box {
+    margin-top: rem(40);
+
+    @include mq('md') {
+        margin-top: rem(80);
+    }
+}

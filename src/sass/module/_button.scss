@@ -1,0 +1,171 @@
+@use "global" as *;
+
+// .button {
+//   font-family: $second-font-family;
+//   color: #ffffff;
+//   font-size: rem(14);
+//   display: inline-block;
+//   background: #408f95;
+//   margin-right: rem(5);
+//   border: 1px solid #408f95;
+//   position: relative;
+//   z-index: 2;
+//   transition: all 0.3s;
+// }
+
+
+// .button-area {
+//   display: inline-block;
+//   text-align: inherit;
+//   width: rem(200);
+//   height: rem(51);
+//   padding-top: rem(16);
+//   padding-right: rem(50);
+// }
+
+
+// .button::before {
+//   content: "";
+//   width: 100%;
+//   height: 100%;
+//   position: absolute;
+//   display: block;
+//   top: 0;
+//   right: 0;
+//   z-index: -1;
+//   background: #fff;
+//   transform-origin: 100% 50%;
+//   transform: scale(0, 1);
+//   transition: all 0.4s;
+// }
+// .button:hover p {
+//   color: #408f95;
+// }
+
+// .button:hover span {
+//   background-color: #408f95;
+// }
+
+// .button:hover::before {
+//   transform: scale(1, 1);
+// }
+
+// .button::after {
+//   content: "";
+//   display: block;
+//   position: absolute;
+//   width: rem(201);
+//   height: rem(54);
+//   top: rem(3);
+//   left: rem(4);
+//   z-index: -2;
+//   border: solid 1px $green-blue;
+// }
+
+// .button-arrow1,
+// .button-arrow2 {
+//   position: absolute;
+//   height: rem(1);
+//   background-color: #ffffff;
+//   display: block;
+// }
+
+// .button-arrow1 {
+//   width: rem(40);
+//   top: rem(26);
+//   right: rem(39);
+// }
+
+// .button-arrow2 {
+//   width: rem(10);
+//   right: rem(37);
+//   top: rem(23);
+//   transform: rotate(41deg);
+// }
+
+
+/* .
+-------------------------------------------------------------*/
+.button{
+  font-family: $second-font-family;
+  display: inline-block;
+  padding-left: rem(40);
+  padding-right: rem(85);
+  padding-block: rem(17);
+  background-color: $green-blue;
+  border: solid 1px $green-blue;
+  line-height: 1;
+  color: #ffffff;
+  margin-right: rem(3);
+  position: relative;
+  transition: all 0.3s;
+  z-index: 2;
+  font-size: rem(14);
+  margin-bottom: rem(6);
+}
+
+.button::before{
+  content: "";
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: 100% 50%;
+  transform: scale(0, 1);
+  background-color: #ffffff;
+  // transform: translateX(-100%);
+  transition: all 0.3s;
+  z-index: -1;
+}
+
+.button::after{
+  content: "";
+  display: inline-block;
+  position: absolute;
+  width: rem(200);
+  height: rem(50);
+  top: 0;
+  left: 0;
+  margin-top: rem(4);
+  margin-left: rem(4);
+  border: solid 1px $green-blue;
+  z-index: -2;
+}
+
+.button span{
+  font-family: $second-font-family;
+}
+
+.arrow{
+  line-height: 1;
+  position: relative;
+}
+
+/* 右向き */
+.arrow::after{
+  content: "";
+  position: absolute;
+  width: rem(40);
+  height: 7px;
+  border-right: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  transform: skew(45deg);
+  top: rem(6);
+  left: rem(12);
+}
+
+/* .hover
+-------------------------------------------------------------*/
+.button:hover{
+  color: $green-blue;
+}
+
+.button:hover::before{
+  transform: scale(1, 1);
+}
+.button:hover .arrow::after{
+  border-right: 1px solid $green-blue;
+  border-bottom: 1px solid $green-blue;
+}

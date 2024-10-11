@@ -1,0 +1,54 @@
+@use "global" as *;
+
+.breadcrumb {
+    position: relative;
+}
+
+.breadcrumb::before {
+    content: "";
+    display: block;
+    width: rem(120);
+    height: rem(55);
+    position: absolute;
+    top: rem(56);
+    left: calc(50% - min(45%, 38.7em));
+    background-image: url(/assets/images/common/_キンギョハナダイ-右向き-sp.png);
+    background-size: cover;
+    z-index: 2;
+
+    @include mq('md') {
+        content: "";
+        display: block;
+        width: rem(301);
+        height: rem(138);
+        position: absolute;
+        top: rem(108);
+        left: calc(50% - min(48%, 38.7em));
+        background-image: url(/assets/images/common/_キンギョハナダイ-右向き-pc.png);
+        background-size: cover;
+        z-index: -1;
+    }
+}
+
+.breadcrumb__inner {}
+
+.breadcrumb__page {
+    display: flex;
+    align-items: center;
+    padding-top: rem(8);
+    gap: rem(8);
+    font-size: rem(14);
+}
+
+.breadcrumb__page-detail {
+    display: flex;
+    align-items: center;
+    gap: rem(8);
+}
+
+.breadcrumb__page-arrow img {
+    width: rem(4);
+    height: rem(8);
+    background-size: cover;
+
+}
